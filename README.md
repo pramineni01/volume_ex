@@ -1,16 +1,28 @@
 # Volume coding challenge
 
-Make with targets:
+#### API format:
+Defined using OpenAPI format. Can be found in api/FlightTrackerApi.yml
+Generated code using oapi-codegen tool (configuration is in api/oapi-codegen-config.yml)
+
+#### API exposed: http://localhost:8080/calculate
+#### HTTP method: POST
+
+#### Tools/Frameworks used:
+    API spec defined using: OpenAPI
+    Boilerplate code generation using: oapi-codegen
+    Server framerwork: Echo
+
+#### Makefile targets:
 ```
 gen, build, test, run
 ```
 
-Test with:
+#### Test with:
 ```
 % make run
 ```
 
-And then use following commands to send requests:
+#### And then use following commands to send requests:
 
 ```
 curl -X 'POST' \
