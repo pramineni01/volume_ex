@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  title: Flight Tracker API
+  version: 0.0.1
+servers: [
+  {
+    "url": "http://localhost:8080",
+    "description": "Flight Tracker API",
+  },
+]
+paths:
+  /calculate:
+   post:
+      summary: calculate flight summary
+      description: find flight source and destination
+      operationId: calculate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/FlightRoute'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightRoute'
+        '405':
+          description: Invalid input
+components:
+  schemas:
+    FlightRoute:
+      type: array
+      items:
+        type: string
+        minItems: 2
+        maxItems: 2
